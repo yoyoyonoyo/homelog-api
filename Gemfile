@@ -54,7 +54,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 認証用に使うgemを追加
 gem 'devise'
-gem 'devise_auth_token'
+gem 'devise_token_auth'
 
 # binding.pry用
 gem 'pry-byebug'
