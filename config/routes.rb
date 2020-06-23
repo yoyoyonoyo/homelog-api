@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :diaries
   namespace :api do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
         registrations: 'api/v1/auth/registrations'
       }
+      resources :diaries do
+        resources :parises
+      end
+      resources :likes, only: [:create, :destroy]
+      resources :genrus, only: [:create, :edit, :destroy]
     end
   end
 end
