@@ -1,0 +1,2 @@
+class Parise < ApplicationRecord
+end

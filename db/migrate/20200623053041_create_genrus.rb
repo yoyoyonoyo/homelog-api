@@ -1,0 +1,11 @@
+class CreateGenrus < ActiveRecord::Migration[6.0]
+  def change
+    create_table :genrus do |t|
+      t.string :content
+      t.references :user
+      t.references :diary
+
+      t.timestamps
+    end
+  end
+end

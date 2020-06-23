@@ -1,0 +1,2 @@
+class GenruController < ApplicationController
+end

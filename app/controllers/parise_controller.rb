@@ -1,0 +1,2 @@
+class PariseController < ApplicationController
+end
