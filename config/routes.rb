@@ -5,10 +5,11 @@ Rails.application.routes.draw do
         registrations: 'api/v1/auth/registrations'
       }
       resources :diaries do
-        resources :parises
+        resources :parises,only: [:create, :edit, :destroy]
       end
       resources :likes, only: [:create, :destroy]
-      resources :genrus, only: [:create, :edit, :destroy]
+      resources :genres, only: [:create, :edit, :destroy]
+      resources :users, only: :show
     end
   end
 end

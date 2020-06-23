@@ -10,24 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_23_053049) do
+ActiveRecord::Schema.define(version: 2020_06_23_081737) do
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
+    t.string "text"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_diaries_on_user_id"
   end
 
-  create_table "genrus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
-    t.bigint "user_id"
     t.bigint "diary_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["diary_id"], name: "index_genrus_on_diary_id"
-    t.index ["user_id"], name: "index_genrus_on_user_id"
+    t.index ["diary_id"], name: "index_genres_on_diary_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -40,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_06_23_053049) do
   end
 
   create_table "parises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "content"
+    t.string "text"
     t.bigint "diary_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

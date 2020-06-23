@@ -1,2 +1,0 @@
-class PariseController < ApplicationController
-end
